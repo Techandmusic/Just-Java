@@ -5,10 +5,10 @@
     <string name="cream">Whipped Cream</string>
     <string name="chococlate">Chocolate</string>
     <string name="order">Order</string>
-    <string name="quantity">Quantity</string>
+    <string name="quantity">Quantity:</string>
     <string name="thank_you">Thank You!</string>
     <string name="add_cream">Add Whipped Cream?</string>
     <string name="add_choco">Add Chocolate?</string>
     <string name="howMany">Quantity</string>
-    <string name="total">Total</string>
+    <string name="total">Total: </string>
 </resources>

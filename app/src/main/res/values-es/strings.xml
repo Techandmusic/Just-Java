@@ -62,4 +62,12 @@
       "Just Java order for Amy" where Amy is the user's name. [CHAR LIMIT=NONE]
     -->
     <string name="order_summary_email_subject">Sólo java para <xliff:g id="name" example="Amy">%s</xliff:g></string>
+    <string name="nameHint">Nombre</string>
+    <string name="topppings">Ingredientes</string>
+    <string name="cream">Crema batida</string>
+    <string name="chococlate">Chcolate</string>
+    <string name="add_cream">Agregue la crema batida? <xliff:g id="addWhippedCream" example="true">%b</xliff:g></string>
+    <string name="add_choco">Agregue el chocolate? <xliff:g id="addChocolate" example="true">%b</xliff:g></string>
+    <string name="total">Total: <xliff:g id="price" example="$10">%s</xliff:g></string>
+    <string name="howMany">Cantidad</string>
 </resources>

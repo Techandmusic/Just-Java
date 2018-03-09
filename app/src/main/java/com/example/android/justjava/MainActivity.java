@@ -86,11 +86,11 @@ public class MainActivity extends AppCompatActivity {
 
         int price = calculatePrice(hasWhippedCream, hasChocolate);
         String priceMessage = "Name: " + customerName;
-        priceMessage += "\nAdd Whipped Cream? "  + hasWhippedCream;
-        priceMessage += "\nAdd Chocolate? " + hasChocolate;
-        priceMessage += "\nQuantity: " + quantity;
-        priceMessage += "\nTotal: " + "$" + price;
-        priceMessage += "\nThank you!";
+        priceMessage += "\n" + getString(R.string.add_cream) + " " + hasWhippedCream;
+        priceMessage += "\n" + getString(R.string.add_choco) + " " + hasChocolate;
+        priceMessage += "\n" + getString(R.string.howMany) + " " + quantity;
+        priceMessage += "\n" + getString(R.string.total) + " " + "$" + price;
+        priceMessage += "\n" + getString(R.string.thank_you);
         orderEmail(orderSubject, priceMessage);
 
 
