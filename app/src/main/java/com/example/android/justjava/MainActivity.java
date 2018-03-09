@@ -51,8 +51,20 @@ public class MainActivity extends AppCompatActivity {
      *
      *
      */
-    private int calculatePrice() {
-        return quantity * 5;
+    private int calculatePrice(boolean cream, boolean chocolate) {
+        int addOns = 0;
+        int coffeePrice = 5;
+        if(cream == true) {
+            addOns += 1;
+        }
+        if(chocolate == true) {
+            addOns += 2;
+        }
+
+        int perCup = coffeePrice + addOns;
+
+
+        return quantity * perCup;
     }
 
     /**
@@ -77,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         boolean hasChocolate = ((CheckBox) findViewById(R.id.chocBox)).isChecked();
 
 
-        int price = calculatePrice();
+        int price = calculatePrice(hasWhippedCream, hasChocolate);
         String priceMessage = "Name: " + customerName;
         priceMessage += "\nAdd whipped cream? " + hasWhippedCream;
         priceMessage += "\nAdd Chocolate? " + hasChocolate;
