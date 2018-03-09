@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
         int price = calculatePrice(hasWhippedCream, hasChocolate);
         String priceMessage = "Name: " + customerName;
-        priceMessage += "\nAdd whipped cream? " + hasWhippedCream;
+        priceMessage += "\nAdd Whipped Cream? "  + hasWhippedCream;
         priceMessage += "\nAdd Chocolate? " + hasChocolate;
         priceMessage += "\nQuantity: " + quantity;
         priceMessage += "\nTotal: " + "$" + price;
