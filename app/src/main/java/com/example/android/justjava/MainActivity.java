@@ -16,7 +16,7 @@ import java.text.NumberFormat;
  */
 public class MainActivity extends AppCompatActivity {
 
-    int quantity = 0;
+    int quantity = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,6 +106,9 @@ public class MainActivity extends AppCompatActivity {
      */
     public void increment(View view) {
         quantity = quantity + 1;
+        if(quantity > 100) {
+            quantity = 100;
+        }
         displayQuantity(quantity);
 
     }
@@ -115,6 +118,9 @@ public class MainActivity extends AppCompatActivity {
      */
     public void decrement(View view) {
         quantity = quantity - 1;
+        if(quantity < 1) {
+            quantity = 1;
+        }
         displayQuantity(quantity);
 
     }
