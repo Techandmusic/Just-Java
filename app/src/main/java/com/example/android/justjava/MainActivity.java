@@ -47,7 +47,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Calculates the price of the order.
+     * Calculates the price of the order,
+     * based on nuber of coffees and toppings added.
      *
      *
      */
