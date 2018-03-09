@@ -1,5 +1,7 @@
 package com.example.android.justjava;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -26,13 +28,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    /**
-     * This method displays the given text on the screen.
-     */
-    private void displayMessage(String message) {
-        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
-        orderSummaryTextView.setText(message);
-    }
 
     /**
      * This method is called when the order button is clicked.
@@ -40,9 +35,7 @@ public class MainActivity extends AppCompatActivity {
     public void submitOrder(View view) {
 
 
-
-        displayMessage(createOrderSummary());
-
+      createOrderSummary();
 
     }
 
@@ -83,9 +76,10 @@ public class MainActivity extends AppCompatActivity {
      * the displayMessage method*/
     
 
-    private String createOrderSummary() {
+    private void createOrderSummary() {
         EditText editor = (EditText) findViewById(R.id.userName);
         String customerName = editor.getText().toString();
+        String orderSubject = "JustJava order for " + customerName;
         boolean hasWhippedCream = ((CheckBox) findViewById(R.id.creamBox)).isChecked();
         boolean hasChocolate = ((CheckBox) findViewById(R.id.chocBox)).isChecked();
 
@@ -97,8 +91,23 @@ public class MainActivity extends AppCompatActivity {
         priceMessage += "\nQuantity: " + quantity;
         priceMessage += "\nTotal: " + "$" + price;
         priceMessage += "\nThank you!";
-        return priceMessage;
+        orderEmail(orderSubject, priceMessage);
 
+
+    }
+
+    /*
+    *  This method creates the intent to send the order to an email app
+    *  */
+
+    public void orderEmail(String subject, String body) {
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:"));
+        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        intent.putExtra(Intent.EXTRA_TEXT, body);
+        if(intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
     }
 
     /**
